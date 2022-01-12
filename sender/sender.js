@@ -1,5 +1,5 @@
 const port = process.env.PORT || 8000
-const webSocket = new WebSocket(`ws:https://casatelavideostreaming.herokuapp.com:${port}`)
+const webSocket = new WebSocket(`ws://casatelavideostreaming.herokuapp.com:${port}`)
 
 webSocket.onmessage = (event) => {
     handleSignallingData(JSON.parse(event.data))
