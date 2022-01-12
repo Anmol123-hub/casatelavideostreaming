@@ -4,13 +4,16 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "websocket": "^1.0.34"
+    "bufferutil": "^4.0.6",
+    "express": "^4.17.2",
+    "utf-8-validate": "^5.0.8",
+    "websocket": "^1.0.34",
+    "ws": "^8.4.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
-    
   },
   "repository": {
     "type": "git",

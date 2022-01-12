@@ -1,14 +1,31 @@
-const Socket = require("websocket").server
-const http = require("https")
-const port = process.env.PORT || 8000
+// const Socket = require("websocket").server
+// const http = require("https")
+// const port = process.env.PORT || 8000
 
-const server = http.createServer((req, res) => {})
+const PORT = process.env.PORT || 3000;
+const INDEX = '/sender.html';
 
-server.listen(port, () => {
-    console.log(`Listening on port ${port}`)
-})
+const server = express()
+  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
-const webSocket = new Socket({ httpServer: server })
+
+// const server = http.createServer((req, res) => {})
+
+// server.listen(port, () => {
+//     console.log(`Listening on port ${port}`)
+// })
+
+ const webSocket = new Socket({ httpServer: server })
+
+// const { Server } = require('ws');
+
+// const wss = new Server({ server });
+
+// wss.on('connection', (ws) => {
+//     console.log('Client connected');
+//     ws.on('close', () => console.log('Client disconnected'));
+//   });
 
 let users = []
 
